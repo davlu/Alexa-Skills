@@ -12,11 +12,11 @@ app = Flask(__name__)
 ask = Ask(app,'/')
 
 def headlineGet():
-    user_info = {'user': 'neko_nyan',
-                 'passwd': 'poopnugget',
+    user_info = {'user': 'ENTERYOURUSERNAMEHERE',  #your reddit user
+                 'passwd': 'ENTERYOURPASSWORDHERE', #your reddit pass
                  'api_type' : 'json'}
     session = requests.Session()
-    session.headers.update({'User-Agent':'Alexa Skill build: neko_nyan'}) # insert reddit username
+    session.headers.update({'User-Agent':'Alexa Skill build: USERNAME'}) # insert reddit username
     session.post('https://www.reddit.com/dev/api', data = user_info)
     time.sleep(1)
     url = 'https://www.reddit.com/r/python/.json?limit=10'
